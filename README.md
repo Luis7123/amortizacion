@@ -11,7 +11,6 @@
     
     dataf(compra,interes,plazo)
 
-```math
-SE = \frac{\sigma}{\sqrt{n}}
-$ \frac{\lambda }{\epsilon }$
+ecuacion usada para el interes 
+```
 ```
