@@ -10,6 +10,4 @@
     
     
     dataf(compra,interes,plazo)
-
-        $$ D= \frac {2}{4²}$$
-        se usan las librerias unnitest y pandas para la ejecucion.
+$ \frac{\lambda }{\epsilon }$
