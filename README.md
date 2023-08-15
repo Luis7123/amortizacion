@@ -10,4 +10,8 @@
     
     
     dataf(compra,interes,plazo)
+
+```math
+SE = \frac{\sigma}{\sqrt{n}}
 $ \frac{\lambda }{\epsilon }$
+```
