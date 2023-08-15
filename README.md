@@ -4,9 +4,9 @@
 - El caso de prueba .csv es el DataFrame con las respectivas pruebas.
 - el caso de prueba .py estaran los unnitest.   
 ## Ejemplo de ejecución.
-    compra = 200000
-    interes = 3.1
-    plazo = 36
+    compra = 200000 # Cantidad de dinero gastado en el producto
+    interes = 3.1   # Interes puesto por entidad financiera
+    plazo = 36      # Cantidad de meses en el cual se pagará la cuota
     
     
     dataf(compra,interes,plazo)
