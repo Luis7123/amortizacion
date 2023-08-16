@@ -13,4 +13,5 @@
 
 ecuacion usada para el interes 
 ```
+\frac{compra * i} {1 - (1 + i)^{-plazo}}
 ```
