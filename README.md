@@ -12,6 +12,6 @@
     dataf(compra,interes,plazo)
 
 ecuacion usada para el interes 
-```
+``` math
 \frac{compra * i} {1 - (1 + i)^{-plazo}}
 ```
