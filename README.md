@@ -5,7 +5,7 @@
 - el caso de prueba .py estaran los unnitest.   
 ## Ejemplo de ejecución.
 
-    ![image](https://github.com/Luis7123/amortizacion/assets/88041788/f9036d6a-135f-4ec2-92b3-4e363b02949a)
+![image](https://github.com/Luis7123/amortizacion/assets/88041788/f9036d6a-135f-4ec2-92b3-4e363b02949a)
 
 ecuacion usada para el interes 
 ``` math
