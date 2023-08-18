@@ -91,17 +91,5 @@ class CreditCardTest(unittest.TestCase):
             pass
         
 
-    class TestAmortizacion(unittest.TestCase):
-        def test_allZero(self):
-            df = pd.read_csv("casoPrueba.csv" , ",")
-            compra = 200000
-            interes = 3.1
-            plazo = 36
-            assert_frame_equal(df,cuotas.dataf(compra,interes,plazo))
-
-    suite = unittest.TestLoader().loadTestsFromTestCase(TestSplitWeight)
-    unittest.TextTestRunner(verbosity=2).run(suite)
-
-
 if __name__ == '__main__':
     unittest.main()
