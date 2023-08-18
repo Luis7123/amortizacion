@@ -7,9 +7,11 @@
 
 ![image](https://github.com/Luis7123/amortizacion/assets/88041788/f9036d6a-135f-4ec2-92b3-4e363b02949a)
 
-ecuacion usada para el interes 
+En el cual la ecuacion usada para el interés 
 ``` math
 \frac{compra * interes} {1 - (1 + interes)^{-plazo}}
 ```
+Para correr el codigo se debe ingresar la compra, interes y el plazo en el cual se harán las cuotas, además de marcar especificamente si desea poseer el resultado del DataFrame de las amortizaciones o de la cuota mensual tambien si desea tener ambos resultados en pantalla.
+
 
 
