@@ -15,3 +15,5 @@ ecuacion usada para el interes
 ``` math
 \frac{compra * interes} {1 - (1 + interes)^{-plazo}}
 ```
+![image](https://github.com/Luis7123/amortizacion/assets/88041788/f9036d6a-135f-4ec2-92b3-4e363b02949a)
+
