@@ -1,3 +1,5 @@
+Luis Carlos Arenas Villamizar Proyect
+----
 # Calculo de las amortizaciones e intereses mensuales.
 
 - Empleamos el codigo para conocer el interés existente al dejar un compra a cuotas mensuales, conocer cuanto fue el dinero invertido y el dinero que se invertira, viendo que tan rentable sale al paso de los años
