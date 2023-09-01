@@ -1,103 +1,103 @@
 import unittest
-import pago
+import payments
 from pandas.util.testing import assert_frame_equal
 import pandas.testing as pd_testing
 
 class CreditCardTest(unittest.TestCase):
 
-    # Cada prueba unitaria es un metodo la clase
+    #Evert unittest it's a method of the class
     def testPayment1(self):
-        compra = 200000
-        tasa = 3.1
-        plazo = 36
+        amount = 200000
+        interest = 3.1
+        payment_time = 36
         cuota = 134726.5
-        resultado = pago.calcularCuota( compra, tasa, plazo )
-        # Prueba que dos variables sean iguales
-        self.assertEqual( cuota, round(resultado,1)  )
+        result = payments.calcularCuota( amount, interest, payment_time )
+        # Test to see if 2 variables are equal
+        self.assertEqual( cuota, round(result,1)  )
 
     def testPayment2(self):
-        compra = 850000
-        tasa = 3.4
-        plazo = 24
+        amount = 850000
+        interest = 3.4
+        payment_time = 24
         cuota = 407059.9
-        resultado = pago.calcularCuota( compra, tasa, plazo )
-        # Prueba que dos variables sean iguales
-        self.assertEqual( cuota, round(resultado,1)  )
+        result = payments.calcularCuota( amount, interest, payment_time )
+        # Test to see if 2 variables are equal
+
+        self.assertEqual( cuota, round(result,1)  )
 
 
     def testPayment3(self):
-        compra = 850000
-        tasa = 0
-        plazo = 48
+        amount = 850000
+        interest = 0
+        payment_time = 48
         cuota = 0
-        resultado = pago.calcularCuota( compra, tasa, plazo )
-        # Prueba que dos variables sean iguales
-        self.assertEqual( cuota, round(resultado,1)  )
+        result = payments.calcularCuota( amount, interest, payment_time )
+        # Test to see if 2 variables are equal
+        self.assertEqual( cuota, round(result,1)  )
  
     
     def testPayment4(self):
-        compra = 50000
-        tasa = 12.4
-        plazo = 60
+        amount = 50000
+        interest = 12.4
+        payment_time = 60
         cuota = 0
-        resultado = pago.calcularCuota( compra, tasa, plazo )
-        # Prueba que dos variables sean iguales
-        self.assertEqual( cuota, round(resultado,1)  )
+        result = payments.calcularCuota( amount, interest, payment_time )
+        # Test to see if 2 variables are equal
+        self.assertEqual( cuota, round(result,1)  )
         try:
-            resultado = pago.calcularCuota( compra, tasa, plazo )
-            # si no generó excepcion, quedo mal hecho el codigo
-            self.assertEqual( resultado, 0 )  # Forzar fallo caso
-        except  pago.TasaExcesiva  :
+            result = payments.calcularCuota( amount, interest, payment_time )
+        
+            self.assertEqual( result, 0 )  
+        except  payments.interestExcesiva  :
             pass
 
 
     def testPayment5(self):
-        compra = 90000
-        tasa = 2.4
-        plazo = 1
+        amount = 90000
+        interest = 2.4
+        payment_time = 1
         cuota = 0
-        resultado = pago.calcularCuota( compra, tasa, plazo )
-        # Prueba que dos variables sean iguales
-        self.assertEqual(cuota, round(resultado,1))
+        result = payments.calcularCuota( amount, interest, payment_time )
+        # Test to see if 2 variables are equal
+        self.assertEqual(cuota, round(result,1))
 
     def testPayment6(self):
-        compra = 0
-        tasa = 2.4
-        plazo = 60
+        amount = 0
+        interest = 2.4
+        payment_time = 60
         cuota = 0
-        resultado = pago.calcularCuota( compra, tasa, plazo )
-        # Prueba que dos variables sean iguales
-        self.assertEqual(cuota, round(resultado,1))
+        result = payments.calcularCuota( amount, interest, payment_time )
+        # Test to see if 2 variables are equal
+        self.assertEqual(cuota, round(result,1))
         try:
-            resultado = pago.calcularCuota( compra, tasa, plazo )
-            # si no generó excepcion, quedo mal hecho el codigo
-            self.assertEqual( resultado, 0 )  # Forzar fallo caso
-        except  pago.montoInexistente  :
+            result = payments.calcularCuota( amount, interest, payment_time )
+           
+            self.assertEqual( result, 0 ) 
+        except  payments.montoInexistente  :
             pass
 
     def testPayment7(self):
-        compra = 50000
-        tasa = 1
-        plazo = -10
+        amount = 50000
+        interest = 1
+        payment_time = -10
         cuota = 0
-        resultado = pago.calcularCuota( compra, tasa, plazo )
-        # Prueba que dos variables sean iguales
-        self.assertEqual(cuota, round(resultado,1))
+        result = payments.calcularCuota( amount, interest, payment_time )
+        # Test to see if 2 variables are equal
+        self.assertEqual(cuota, round(result,1))
         try:
-            resultado = pago.calcularCuota( compra, tasa, plazo )
-            # si no generó excepcion, quedo mal hecho el codigo
-            self.assertEqual( resultado, 0 )  # Forzar fallo caso
-        except  pago.plazoNegativo  :
+            result = payments.calcularCuota( amount, interest, payment_time )
+            
+            self.assertEqual( result, 0 )  
+        except  payments.payment_timeNegativo  :
             pass
-
+    
     def testAmortizacion(self):
-        compra = 850000
-        tasa = 3.4
-        plazo = 24
-        amortizacion = 33225.109
-        abono=90000
-        mes_abono =  5
-        df_amortization = pago.dataframe_amortizacion( compra, tasa, plazo ,abono, mes_abono )
+        amount = 850000
+        interest = 3.4
+        payment_time = 24
+        deposit=90000
+        month_deposit =  5
+        df_amortization = payments.dataframe_amortizacion( amount, interest, payment_time ,deposit, month_deposit )
         
         list_df_amortization = list(df_amortization.iloc[1])
         list_correct_values=[52.377 , 28.900 , 23.477 ,826.522]
